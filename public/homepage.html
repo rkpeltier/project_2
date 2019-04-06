@@ -9,14 +9,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <!--jQuery-->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script> <!-- Reset Sheet -->
-    <link rel="stylesheet" type="text/css" href="publoc/styles/reset.css">
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Reset Sheet -->
+    <link rel="stylesheet" type="text/css" href="public/styles/reset.css">
+    <!--Popper-->
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- JQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Style Sheet -->
     <link rel="stylesheet" type="text/css" href="public/styles/homepage.css">
     <!-- google fonts
@@ -61,9 +63,9 @@
                 <img src="assets/images/weddingDress.jpg" class="card-img-top" alt="Wedding Dresses">
                 <div class="card-body">
                     <p class="card-text" id="weddingDresses">Wedding Dresses</p>
-                    <button class="btn favbtn" data-type="wedding-dress"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="wedding-dress"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="wedding-dress"><i class="far fa-lightbulb"></i></button>
+                    <button class="btn favbtn" data-type="wedding-dress" data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="wedding-dress" data-toggle="tooltip" data-placement="bottom" title="Locations"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-dress"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
 
                 </div>
             </div>
@@ -74,10 +76,10 @@
                 <img style="height: 428px" src="assets/images/groomsSuit.jpg" class="card-img-top" alt="Tuxedo">
                 <div class="card-body">
                     <p class="card-text">Tuxedo</p>
-                    <button class="btn favbtn" data-type="tuxedo"><i class="far fa-heart"></i></button>
+                    <button class="btn favbtn" data-type="tuxedo"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
 
-                    <button class="btn mapBtn" data-type="tuxedo"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="tuxedo"><i class="far fa-lightbulb"></i></button>
+                    <button class="btn mapBtn" data-type="tuxedo"data-toggle="tooltip" data-placement="bottom" title="Locations"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="tuxedo"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
                 </div>
             </div>
         </div>
@@ -87,9 +89,9 @@
                 <img src="assets/images/cakes.jpg" class="card-img-top" alt="Cakes">
                 <div class="card-body">
                     <p class="card-text">Cakes</p>
-                    <button class="btn favbtn" data-type="wedding-cake"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="weddind-cake"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="wedding-cake"><i class="far fa-lightbulb"></i></button>
+                    <button class="btn favbtn" data-type="wedding-cake"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="weddind-cake"data-toggle="tooltip" data-placement="bottom" title="Locations"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-cake"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
                 </div>
             </div>
         </div>
@@ -103,9 +105,9 @@
                 <img src="assets/images/venues1.jpg" class="card-img-top" alt="Venues">
                 <div class="card-body">
                     <p class="card-text">Venues</p>
-                    <button class="btn favbtn" data-type="venues"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="venues"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="venues"><i class="far fa-lightbulb"></i></button>
+                    <button class="btn favbtn" data-type="venues"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="venues"data-toggle="tooltip" data-placement="bottom" title="Locations"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="venues"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
                 </div>
             </div>
         </div>
@@ -115,10 +117,10 @@
                 <img src="assets/images/bouquet1.jpg" class="card-img-top" alt="Wedding Bouquet">
                 <div class="card-body">
                     <p class="card-text">Wedding Bouquet</p>
-                    <button class="btn favbtn" data-type="wedding-bouquet"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="wedding-bouquet"><i
+                    <button class="btn favbtn" data-type="wedding-bouquet"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="wedding-bouquet"data-toggle="tooltip" data-placement="bottom" title="Locations"><i
                             class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="wedding-bouquet"><i class="far fa-lightbulb"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-bouquet"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
                 </div>
             </div>
         </div>
@@ -128,10 +130,10 @@
                 <img src="assets/images/bridesmaid.jpg" class="card-img-top" alt="Bridesmaid Dresses">
                 <div class="card-body">
                     <p class="card-text">Bridesmaid Dresses</p>
-                    <button class="btn favbtn" data-type="bridesmaid-dress"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="bridesmaid-dress"><i
+                    <button class="btn favbtn" data-type="bridesmaid-dress"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="bridesmaid-dress"data-toggle="tooltip" data-placement="bottom" title="Locations"><i
                             class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="bridesmaid-dress"><i class="far fa-lightbulb"></i></button>
+                    <button class="btn ideaBtn" data-type="bridesmaid-dress"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
                 </div>
             </div>
         </div>
@@ -142,6 +144,11 @@
 
     <script src="search-save assets/scripts/images.js"></script>
     <script src="assets/vendors.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
 </body>
 
