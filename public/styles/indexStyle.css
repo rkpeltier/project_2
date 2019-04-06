@@ -1,0 +1,34 @@
+body {
+    color: blanchedalmond;
+
+        margin-top: 50px;
+        background-size: cover;
+        background-image: url("../assets/images/couples.jpg");
+        color: azure;
+        font-size: 20px;
+}
+
+    #signInBtn{
+        margin: auto;
+}
+
+    .container{
+        text-align: center;
+        margin-top: 150px;
+        color: white;
+}
+
+#signInBtn {
+    background: rgb(0, 55, 95);
+    color: white;
+    border: none;
+}
+
+.link {
+    color: rgb(248, 221, 219);
+}
+
+#emailPrivacy{
+    color: white;
+}
+
