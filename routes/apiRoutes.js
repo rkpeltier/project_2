@@ -35,7 +35,7 @@ module.exports = function(app) {
   //api route to get images from Unsplash.com
   app.get("/api/unsplash_images/:keyword", function(req, res) {
     var queryURL =
-      "https://api.unsplash.com/search/photos?per_page=30&query=" +
+      "https://api.unsplash.com/search/photos?&per_page=60&query=" +
       req.params.keyword +
       "&client_id=9a85effe1f10fcad9e85e179b923e801807342ab6fb9db2a916cddc1003596ae";
     axios.get(queryURL).then(function(response) {
@@ -50,7 +50,7 @@ module.exports = function(app) {
     var queryURL =
       "https://pixabay.com/api/?key=12136200-6c56155333f1ce89480031596&q=" +
       req.params.keyword +
-      "&image_type=photo&pretty=true";
+      "&image_type=photo&per_page=30";
     axios.get(queryURL).then(function(response) {
       console.log(queryURL);
       console.log(response);
