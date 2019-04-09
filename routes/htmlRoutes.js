@@ -11,9 +11,20 @@ module.exports = function(app) {
     });
   });
 
+  //Google Maps Florists
+  app.get("/florist", function(req, res) {
+    db.Example.findAll({}).then(function(florists) {
+      res.render("vendor-search", {
+        map: florists
+      });
+    });
+  });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
       res.render("example", {
         example: dbExample
       });
