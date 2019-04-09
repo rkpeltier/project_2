@@ -9,6 +9,13 @@ module.exports = function(app) {
     });
   });
 
+  // Google Maps Florist
+  app.get("/api/vendor-search", function(req, res) {
+    db.map_florist.findAll().then(function(map) {
+      res.json(map);
+    });
+  });
+
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
