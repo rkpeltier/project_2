@@ -11,6 +11,11 @@ module.exports = function(app) {
     });
   });
 
+  //loads weddingDress.html page
+  app.get("/unsplash-dress-images", function(req, res){
+    res.sendfile(path.join(__dirname, "../public/weddingDress.html"));
+  });
+
   //Google Maps Florists
   app.get("/florist", function(req, res) {
     db.Example.findAll({}).then(function(florists) {
