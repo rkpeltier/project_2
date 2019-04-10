@@ -11,9 +11,16 @@ module.exports = function(app) {
     });
   });
 
+
   //Google Maps Vendor Search
   app.get("/vendor-search", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/vendor-search.html"));
+
+  //loads weddingDress.html page
+  app.get("/unsplash-dress-images", function(req, res){
+    res.sendfile(path.join(__dirname, "../public/weddingDress.html"));
+  });
+
   });
 
   // Load example page and pass in an example by id
