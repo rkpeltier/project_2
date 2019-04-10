@@ -12,17 +12,13 @@ module.exports = function(app) {
   });
 
   //loads weddingDress.html page
-  app.get("/unsplash-dress-images", function(req, res){
+  app.get("/unsplash-dress-images", function(req, res) {
     res.sendfile(path.join(__dirname, "../public/weddingDress.html"));
   });
 
-  //Google Maps Florists
-  app.get("/florist", function(req, res) {
-    db.Example.findAll({}).then(function(florists) {
-      res.render("vendor-search", {
-        map: florists
-      });
-    });
+  //Google Maps Page
+  app.get("/vendor-search", function(req, res) {
+    res.sendfile(path.join(__dirname, "../public/Vendor-Search.html"));
   });
 
   // Load example page and pass in an example by id
