@@ -9,13 +9,6 @@ module.exports = function(app) {
     });
   });
 
-  // Google Maps Florist
-  app.get("/api/vendor-search", function(req, res) {
-    db.map_florist.findAll().then(function(map) {
-      res.json(map);
-    });
-  });
-
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
@@ -30,6 +23,20 @@ module.exports = function(app) {
     ) {
       res.json(dbExample);
     });
+  });
+
+  // Google Maps Florist
+  app.get("/api/map_florist", function(req, res) {
+    var queryMap =
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyAuj7-rya5ihyYip8P-AMJjAnWpOHl_PaM&libraries=places,geometry";
+    axios.get(queryMap).then(function(response) {
+      console.log(response);
+      console.log(queryMap);
+      res.json(response.data);
+    });
+    db.map_florist.findAll({}).then(function(florist) {
+      res.json(florist);
+    })
   });
 
   //api route to get images from Unsplash.com

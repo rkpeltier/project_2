@@ -11,13 +11,9 @@ module.exports = function(app) {
     });
   });
 
-  //Google Maps Florists
-  app.get("/florist", function(req, res) {
-    db.Example.findAll({}).then(function(florists) {
-      res.render("vendor-search", {
-        map: florists
-      });
-    });
+  //Google Maps Vendor Search
+  app.get("/vendor-search", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/vendor-search.html"));
   });
 
   // Load example page and pass in an example by id
