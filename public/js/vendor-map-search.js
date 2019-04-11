@@ -1,7 +1,5 @@
 //Global Variables
 var map;
-var service;
-var infoWindow;
 var LatLng = new google.maps.LatLng(38.575764, -121.478851);
 
 //Initialize Map Function
@@ -50,42 +48,46 @@ function initMap() {
       };
 
       // Create a marker for each place.
-      markers.push(new google.maps.Marker({
+
+      markers.push(
+        new google.maps.Marker({
           map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
+          icon: icon,
+          title: place.name,
+          position: place.geometry.location
         })
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-          map.fitBounds(bounds);
-        });
+      );
 
-  }  
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+  });
+};
 
-  initMap();
-
+initMap();
 
 //////////////////// LOG-OUT ////////////////////
 $(document).ready(function() {
-$("#logoutLink").on("click", function(){
-  firebase.auth().signOut().then(function() {
-
-      
-      console.log("signout successful");
-
-      var url = "index.html";
-      $(location).attr('href', url);
-      // Sign-out successful.
-    }).catch(function(error) {
-      // An error happened.
-    });
-
-});
+  $("#logoutLink").on("click", function() {
+    firebase
+      .auth()
+      .signOut()
+      .then(function() {
+        console.log("signout successful");
+        var url = "index.html";
+        $(location).attr("href", url);
+        // Sign-out successful.
+      })
+      .catch(function(error) {
+        if (error) {
+          console.log(error);
+        }
+      });
+  });
 });
 
