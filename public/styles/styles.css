@@ -14,6 +14,10 @@
   width: 80%;    
 }
 
+.squish{
+  width: 80%;
+}
+
 #Flag {
   background: #70e1f5;  /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */

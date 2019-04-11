@@ -76,14 +76,14 @@
         <!-- row for containing the search results div -->
         <div class="row" id="search-images" style="background: rgb(233, 232, 227)">
 
-            <div class="col-4">
+            <div class="col-5">
 
                 <!-- div for results of unsplash image search to append to -->
                 <div id="unsplash-images-appear-here" class="d-flex flex-wrap justify-content-center"></div>
 
             </div>
 
-            <div class="col-4">
+            <div class="col-5">
 
                 <!-- div for results of pixabay image search to append to -->
                 <div id="pixabay-images-appear-here" class="d-flex flex-wrap justify-content-center"></div>
@@ -129,6 +129,13 @@
                     // add styling to images on page
                     newImage.addClass("mt-5 mb-1 mr-5 ml-5");
                     newImage.attr('id', 'picture'); // add id to images for on-click function to save image
+                    newImage.data("user_id", 001);
+                    newImage.data("unsplash_id", results[i].id);
+                    newImage.data("url", results[i].urls.small);
+                    newImage.data("author", results[i].user.name)
+                    newImage.data("category", "wedding dress");
+                    // newImage.data("created_at", results[i].created_at);
+                    newImage.data("source", "https://unsplash.com/");
 
                     //add styling to photographer name
                     name.addClass("mb-0 mr-5 ml-5");
@@ -168,7 +175,7 @@
                     imageDiv.append(portfolioLink);
 
                     // add styling to images on page
-                    newImage.addClass("mt-5 mb-1 mr-5 ml-5");
+                    newImage.addClass("mt-5 mb-1 mr-5 ml-5 squish");
                     newImage.attr('id', 'picture'); // add id to images for on-click function to save image
 
                     //add styling to photographer name
@@ -179,17 +186,10 @@
                     portfolioLink.addClass("mt-0 mr-5 ml-5");
                     portfolioLink.attr('id', 'photoText');
                 }
-
             });
-
         });
-
-
-
-
-
-
     </script>
+    <script src="js/newFav.js"></script>
 </body>
 
 </html>
