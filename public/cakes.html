@@ -104,7 +104,7 @@
 
         //function to get unsplash search images onto page
         $(document).ready(function () {
-            $.get("api/unsplash_images/wedding-gown", function (data) {
+            $.get("api/unsplash_images/wedding-cake", function (data) {
                 // console.log(data);
                 var results = data.results;
 
@@ -133,7 +133,7 @@
                     newImage.data("unsplash_id", results[i].id);
                     newImage.data("url", results[i].urls.small);
                     newImage.data("author", results[i].user.name)
-                    newImage.data("category", "wedding dress");
+                    newImage.data("category", "wedding cake");
                     // newImage.data("created_at", results[i].created_at);
                     newImage.data("source", "https://unsplash.com/");
 
@@ -152,7 +152,7 @@
 
 
             //function to get pixabay search images onto page
-            $.get("api/pixabay_images/wedding+dress", function (data) {
+            $.get("api/pixabay_images/wedding+cake", function (data) {
                 console.log(data);
                 var results = data.hits;
 
@@ -181,7 +181,7 @@
                     newImage.data("unsplash_id", results[i].id);
                     newImage.data("url", results[i].webformatURL);
                     newImage.data("author", results[i].user)
-                    newImage.data("category", "wedding dress");
+                    newImage.data("category", "wedding cake");
                     // newImage.data("created_at", results[i].created_at);
                     newImage.data("source", "https://pixabay.com/");
 

@@ -37,7 +37,7 @@ module.exports = function (app) {
     });
     db.map_florist.findAll({}).then(function (florist) {
       res.json(florist);
-    })
+    });
   });
 
   //api route to get images from Unsplash.com
@@ -58,7 +58,7 @@ module.exports = function (app) {
     var queryURL =
       "https://pixabay.com/api/?key=12136200-6c56155333f1ce89480031596&q=" +
       req.params.keyword +
-      "&image_type=photo&per_page=30";
+      "&image_type=photo&per_page=36";
     axios.get(queryURL).then(function (response) {
       console.log(queryURL);
       console.log(response);
