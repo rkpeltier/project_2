@@ -48,6 +48,7 @@ function initMap() {
       };
 
       // Create a marker for each place.
+
       markers.push(
         new google.maps.Marker({
           map: map,
@@ -66,7 +67,7 @@ function initMap() {
     });
     map.fitBounds(bounds);
   });
-}
+};
 
 initMap();
 
@@ -89,3 +90,4 @@ $(document).ready(function() {
       });
   });
 });
+
