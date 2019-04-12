@@ -17,15 +17,6 @@ module.exports = function (app) {
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
-  });
-
   // Google Maps Florist
   app.get("/api/map_florist", function (req, res) {
     var queryMap =
@@ -85,19 +76,17 @@ module.exports = function (app) {
 
   //api route to delete a saved image from the database
   app.delete("/api/delete/:id", function (req, res) {
-    db.Favorites.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (results) {
-      res.json(results);
+    db.Favorites.destroy({ where: { id: req.params.id } }).then(function (
+      dbFavorites
+    ) {
+      res.json(dbFavorites);
     });
   });
 
   // Get all pictures from users saved images
-  app.get("/api/faves/:category", function(req, res) {
+  app.get("/api/faves/:category", function (req, res) {
     db.Favorites.findAll({ where: { category: req.params.category } }).then(
-      function(data) {
+      function (data) {
         return res.json(data);
       }
     );
