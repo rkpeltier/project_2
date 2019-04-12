@@ -136,11 +136,13 @@
                     // add styling to images on page
                     newImage.addClass("mt-5 mb-1 mr-5 ml-5");
                     newImage.attr('id', 'picture'); // add id to images for on-click function to save image
-                    newImage.data("user_id", 001);
+
+                    //adding JSONobject information to database
+                    newImage.data("user_id", 001);//localstorage.getitem("currentuser").id
                     newImage.data("unsplash_id", results[i].id);
                     newImage.data("url", results[i].urls.small);
                     newImage.data("author", results[i].user.name)
-                    newImage.data("category", "wedding dress");
+                    newImage.data("category", "dress");
                     // newImage.data("created_at", results[i].created_at);
                     newImage.data("source", "https://unsplash.com/");
 
@@ -151,10 +153,24 @@
                     //add styilng to portfolio links
                     portfolioLink.addClass("mt-0 mr-5 ml-5");
                     portfolioLink.attr('id', 'photoText');
+                };
 
+                //Get request for all favorited unsplash images
+                $.get("/api/faves", function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        console.log("My favorites: " + data[i]);
+                        var fav = data[i].category;
+                        var addImageDiv = $("<div>");
+                        var newFavImage = $("<img>")
+                        newFavImage.attr(fav, newFavImage); //add small image source from the results
+                        addImageDiv.append(newFavImage);  //append images to the div
+                        $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
 
-                }
-
+                        //styling saved imaged in side panel
+                        newFavImage.addClass("mt-2 mb-2");
+                        newFavImage.attr('id', 'small');
+                    }
+                });
             });
 
 
@@ -188,7 +204,7 @@
                     newImage.data("unsplash_id", results[i].id);
                     newImage.data("url", results[i].webformatURL);
                     newImage.data("author", results[i].user)
-                    newImage.data("category", "wedding dress");
+                    newImage.data("category", "dress");
                     // newImage.data("created_at", results[i].created_at);
                     newImage.data("source", "https://pixabay.com/");
 
@@ -200,6 +216,23 @@
                     portfolioLink.addClass("mt-0 mr-5 ml-5");
                     portfolioLink.attr('id', 'photoText');
                 }
+
+                //Get request for all favorited unsplash images
+                $.get("/api/faves", function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        console.log("My favorites: " + data[i]);
+                        var fav = data[i].category;
+                        var addImageDiv = $("<div>");
+                        var newFavImage = $("<img>")
+                        newFavImage.attr(fav, newFavImage); //add small image source from the results
+                        addImageDiv.append(newFavImage);  //append images to the div
+                        $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
+
+                        //styling saved imaged in side panel
+                        newFavImage.addClass("mt-2 mb-2");
+                        newFavImage.attr('id', 'small');
+                    }
+                });
             });
         });
     </script>

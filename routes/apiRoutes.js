@@ -78,12 +78,28 @@ module.exports = function (app) {
       category: req.body.category,
       // created_at: req.body.created_at,
       source: req.body.source
-    }).then(function(results) {
+    }).then(function (results) {
       res.json(results);
     });
   });
 
-  //Add api route to get user's saved images from Favorites table
-  //needs a dynamic call that gets all from user and from category that is passed in
+  //api route to delete a saved image from the database
+  app.delete("/api/delete/:id", function (req, res) {
+    db.Favorites.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (results) {
+      res.json(results);
+    });
+  });
 
+  // Get all pictures from users saved images
+  app.get("/api/faves/:category", function(req, res) {
+    db.Favorites.findAll({ where: { category: req.params.category } }).then(
+      function(data) {
+        return res.json(data);
+      }
+    );
+  });
 };
