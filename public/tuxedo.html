@@ -157,10 +157,25 @@
                     //add styilng to portfolio links
                     portfolioLink.addClass("mt-0 mr-5 ml-5");
                     portfolioLink.attr('id', 'photoText');
+                };
 
+                //Get all images from db and push to side bar
+                $.get("/api/faves/tuxedo", function (data) {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        console.log("My favorites: " + data[i]);
+                        var url = data[i].url;
+                        var addImageDiv = $("<div>");
+                        var newFavImage = $("<img>")
+                        newFavImage.attr("src", url); //add small image source from the results
+                        addImageDiv.append(newFavImage);  //append images to the div
+                        $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
 
-                }
-
+                        //styling saved imaged in side panel
+                        newFavImage.addClass("mt-2 mb-2");
+                        newFavImage.attr('id', 'small');
+                    }
+                });
             });
 
 
@@ -205,7 +220,25 @@
                     //add styilng to portfolio links
                     portfolioLink.addClass("mt-0 mr-5 ml-5");
                     portfolioLink.attr('id', 'photoText');
-                }
+                };
+
+                //Get all images from db and push to side bar
+                $.get("/api/faves/tuxedo", function (data) {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        console.log("My favorites: " + data[i]);
+                        var url = data[i].url;
+                        var addImageDiv = $("<div>");
+                        var newFavImage = $("<img>")
+                        newFavImage.attr("src", url); //add small image source from the results
+                        addImageDiv.append(newFavImage);  //append images to the div
+                        $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
+
+                        //styling saved imaged in side panel
+                        newFavImage.addClass("mt-2 mb-2");
+                        newFavImage.attr('id', 'small');
+                    }
+                });
             });
         });
     </script>

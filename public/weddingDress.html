@@ -155,7 +155,7 @@
                     portfolioLink.attr('id', 'photoText');
                 };
 
-                //Get all images from db
+                //Get all images from db and push to side bar
                 $.get("/api/faves/dress", function (data) {
                     for (var i = 0; i < data.length; i++)
                     {
@@ -218,14 +218,15 @@
                     portfolioLink.attr('id', 'photoText');
                 }
 
-                //Get request for all favorited unsplash images
-                $.get("/api/faves", function (data) {
-                    for (var i = 0; i < data.length; i++) {
+                //Get all images from db and push to side bar
+                $.get("/api/faves/dress", function (data) {
+                    for (var i = 0; i < data.length; i++)
+                    {
                         console.log("My favorites: " + data[i]);
-                        var fav = data[i].category;
+                        var url = data[i].url;
                         var addImageDiv = $("<div>");
                         var newFavImage = $("<img>")
-                        newFavImage.attr(fav, newFavImage); //add small image source from the results
+                        newFavImage.attr("src", url); //add small image source from the results
                         addImageDiv.append(newFavImage);  //append images to the div
                         $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
 

@@ -27,11 +27,5 @@ $(document).on("click", "#small", function (event) {
   event.preventDefault();
   console.log("clicked a saved picture");
 
-  //Send an AJAX DELETE-request with jQuery
-  $.ajax({
-    method: "DELETE",
-    url: "/api/delete/" + id
-  }).then(function() {
-    getPosts(postCategorySelect.val());
-  });
+  
 });
