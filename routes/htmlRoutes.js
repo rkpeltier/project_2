@@ -1,4 +1,7 @@
-var db = require("../models");
+/* eslint-disable linebreak-style */
+/* eslint-disable prettier/prettier */
+/* eslint-disable linebreak-style */
+// var db = require("../models");
 
 module.exports = function (app) {
   // Load index page

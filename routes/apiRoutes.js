@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable prettier/prettier */
 /* eslint-disable camelcase */
 var axios = require("axios");
 var db = require("../models");
@@ -14,20 +16,6 @@ module.exports = function (app) {
   app.post("/api/examples", function (req, res) {
     db.Example.create(req.body).then(function (dbExample) {
       res.json(dbExample);
-    });
-  });
-
-  // Google Maps Florist
-  app.get("/api/map_florist", function (req, res) {
-    var queryMap =
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyAuj7-rya5ihyYip8P-AMJjAnWpOHl_PaM&libraries=places,geometry";
-    axios.get(queryMap).then(function (response) {
-      console.log(response);
-      console.log(queryMap);
-      res.json(response.data);
-    });
-    db.map_florist.findAll({}).then(function (florist) {
-      res.json(florist);
     });
   });
 
