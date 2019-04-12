@@ -17,8 +17,21 @@ $(document).on("click", "#picture", function (event) {
   // Send an AJAX POST-request with jQuery
   $.post("/api/new", newFavorite)
     // On success, run the following code
-    .then(function(data) {
+    .then(function (data) {
       // Log the data we found
       console.log(data);
-    });  
+    });
+});
+
+$(document).on("click", "#small", function (event) {
+  event.preventDefault();
+  console.log("clicked a saved picture");
+
+  //Send an AJAX DELETE-request with jQuery
+  $.ajax({
+    method: "DELETE",
+    url: "/api/delete/" + id
+  }).then(function() {
+    getPosts(postCategorySelect.val());
+  });
 });

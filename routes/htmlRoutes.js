@@ -36,6 +36,11 @@ module.exports = function (app) {
     res.sendfile(path.join(__dirname, "../public/Vendor-Search.html"));
   });
 
+  //Get all user favorite images
+  app.get("/faves", function(req, res) {
+    res.sendfile(path.join(__dirname, "../public/weddingDress.html"));
+  });
+
   // // Load example page and pass in an example by id
   // app.get("/example/:id", function (req, res) {
   //   db.Example.findOne({ where: { id: req.params.id } }).then(function (
@@ -48,7 +53,7 @@ module.exports = function (app) {
   // });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 };
