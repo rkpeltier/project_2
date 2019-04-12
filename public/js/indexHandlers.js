@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("#signUpContainer").hide();
   
     var database = firebase.database();
-  
+   
     // LOG IN /////////////////////////
     $("#signInBtn").on("click", function (event) {
   
