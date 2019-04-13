@@ -138,6 +138,8 @@
                     newImage.attr('id', 'picture'); // add id to images for on-click function to save image
 
                     //adding JSONobject information to database
+                    var userID = localstorage.getitem("currentuser").id;
+                    console.log(userID);
                     newImage.data("user_id", 001);//localstorage.getitem("currentuser").id
                     newImage.data("unsplash_id", results[i].id);
                     newImage.data("url", results[i].urls.small);
