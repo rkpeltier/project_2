@@ -9,6 +9,13 @@ $(".dressBtn").on("click", function(){
 
 });
 
+$(".favbtn").on("click", function(){
+    window.location.href = "favorites";
+
+});
+
+favbtn
+
 $(".tuxBtn").on("click", function(){
     window.location.href = "tuxedo-images";
 });
