@@ -11,13 +11,14 @@ $(document).ready(function () {
   
       var email = $("#emailSignIn").val();
       var password = $("#passwordSignIn").val();
-  
+   
       firebase.auth().signInWithEmailAndPassword(email, password)
-  
+   
         .then(function (user) {
   
-          var url = "../public/homepage.html";
+          var url = "homepage.html";
           $(location).attr('href', url);
+          localStorage.setItem("userId", user.user.uid);
           console.log(user);
   
         })
@@ -85,6 +86,7 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           // User logged in already or has just logged in.
+
           console.log(user.uid);
         } else {
           // User not logged in or has just logged out.

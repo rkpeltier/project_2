@@ -2,6 +2,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable linebreak-style */
 // var db = require("../models");
+var path = require("path");
 
 module.exports = function (app) {
   // Load index page
@@ -13,29 +14,34 @@ module.exports = function (app) {
   //     });
   //   });
   // });
- 
+
   //Loads Index.html
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   //loads Home Page
-  app.get("/home", function(req, res) {
+  app.get("/home", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/homepage.html"));
   });
 
   //loads weddingDress.html page
-  app.get("/unsplash-dress-images", function (req, res) {
+  app.get("/dress-images", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/weddingDress.html"));
   });
 
   //loads cakes.html page
-  app.get("/unsplash-dress-images", function (req, res) {
+  app.get("/cakes-images", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/cakes.html"));
   });
 
+  //loads favorites.html page
+  app.get("/favorites", function (req, res) {
+    res.sendfile(path.join(__dirname, "../public/favorites.html"));
+  });
+
   //loads tuxedo.html page
-  app.get("/unsplash-dress-images", function (req, res) {
+  app.get("/tuxedo-images", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/tuxedo.html"));
   });
 
@@ -45,7 +51,7 @@ module.exports = function (app) {
   });
 
   //Get all user favorite images
-  app.get("/faves", function(req, res) {
+  app.get("/faves", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/weddingDress.html"));
   });
 
@@ -61,7 +67,7 @@ module.exports = function (app) {
   // });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
