@@ -23,6 +23,16 @@ $(document).on("click", "#picture", function (event)
     // On success, run the following code
     .then(function (data)
     {
+      var url = newFavorite.url;
+      var addImageDiv = $("<div>");
+      var newFavImage = $("<img>")
+      newFavImage.attr("src", url); //add small image source from the results
+      addImageDiv.append(newFavImage); //append images to the div
+      $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
+
+      //styling saved imaged in side panel
+      newFavImage.addClass("mt-2 mb-2");
+      newFavImage.attr("id", "small");
       // Log the data we found
       console.log(data);
     });
@@ -41,5 +51,7 @@ $(document).on("click", "#small", function (event)
   }).then(function(dbFavorites){
     //some other code for the callback to delete
     //be deleted!!!
+
+    
   });
 });
