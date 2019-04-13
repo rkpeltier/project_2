@@ -1,4 +1,7 @@
-var db = require("../models");
+/* eslint-disable linebreak-style */
+/* eslint-disable prettier/prettier */
+/* eslint-disable linebreak-style */
+// var db = require("../models");
 
 module.exports = function (app) {
   // Load index page
@@ -11,9 +14,14 @@ module.exports = function (app) {
   //   });
   // });
 
-  //Google Maps Vendor Search
-  app.get("/vendor-search", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/vendor-search.html"));
+  //Loads Index.html
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
+  //loads Home Page
+  app.get("/home", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/homepage.html"));
   });
 
   //loads weddingDress.html page
