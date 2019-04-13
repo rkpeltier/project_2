@@ -17,6 +17,7 @@
     "username": "root",
     "password": null,
     "database": "dreamboard_db",
+    "host": "mysql",
     "dialect": "mysql"
   }
 }
