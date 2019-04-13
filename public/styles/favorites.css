@@ -13,6 +13,23 @@ h3
   text-align: center;
 }
 
+/* Nav Bar */
+#Flag {
+  background: #70e1f5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#category {
+  font-style: italic;
+  margin-left: 50px;
+  padding-top: 3pt;
+  padding-bottom: 0pt;
+  font-weight: 400;
+}
+
+
 /* styles for profile image */
 #imageUpload
 {
@@ -28,7 +45,7 @@ h3
   width: 250px;
   height: 250px;
   overflow: hidden;
-  -webkit-border-radius: 0%;
+  -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
@@ -71,10 +88,10 @@ h1, h3 {
   padding: 0;
 }
 #event-info {
-    background-color: rgba(245, 226, 117, 0.685);
+    background-color: #ffd194;
     color: black;
     padding: 12px;
-    box-shadow: 4px 6px 6px #ccc; 
+    box-shadow: 4px 6px 6px #ffd194; 
     margin: 46px 0 16px 0;
 }
   .countdown-wrapper {

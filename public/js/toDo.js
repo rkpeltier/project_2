@@ -93,6 +93,8 @@ data = data || {};
                 }
             })
 
+        };
+
         // Add Task
     var generateElement = function (params) {
         var parent = $(codes[params.code]);
