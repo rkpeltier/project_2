@@ -138,9 +138,11 @@
                     newImage.attr('id', 'picture'); // add id to images for on-click function to save image
  
                     //adding JSONobject information to database
+
                     var myUserID = localstorage.getitem("userId");
                     console.log(myUserID);
                     newImage.data("user_id", user);//localstorage.getitem("currentuser").id
+
                     newImage.data("unsplash_id", results[i].id);
                     newImage.data("url", results[i].urls.small);
                     newImage.data("author", results[i].user.name)
@@ -229,7 +231,7 @@
                         var addImageDiv = $("<div>");
                         var newFavImage = $("<img>")
                         newFavImage.attr("src", url); //add small image source from the results
-                        addImageDiv.append(newFavImage);  //append images to the div
+                        addImageDiv.append(newFavImage); //append images to the div
                         $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
 
                         //styling saved imaged in side panel

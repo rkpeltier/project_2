@@ -1,20 +1,20 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable indent */
 $(".mapBtn").on("click", function(){
-    window.location.href = "../Vendor-Search.html";
+    window.location.href = "vendor-search";
 })
 
 $(".dressBtn").on("click", function(){
-    window.location.href = "../weddingDress.html";
+    window.location.href = "dress-images";
 
 });
 
 $(".tuxBtn").on("click", function(){
-    window.location.href = "../tuxedo.html";
+    window.location.href = "tuxedo-images";
 });
 
 $(".cakeBtn").on("click", function(){
-    window.location.href = "../cakes.html";
+    window.location.href = "cakes-images";
 });
 
 
