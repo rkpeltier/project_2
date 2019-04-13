@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 module.exports = function(sequelize, DataTypes) {
   var Favorites = sequelize.define("Favorites", {
-    user_id: DataTypes.INTEGER,
+    user_id: DataTypes.STRING,
     unsplash_id: DataTypes.STRING,
     url: DataTypes.STRING,
     author: DataTypes.STRING,
