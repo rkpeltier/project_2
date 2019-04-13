@@ -2,6 +2,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable linebreak-style */
 // var db = require("../models");
+var path = require("path");
 
 module.exports = function (app) {
   // Load index page
@@ -25,17 +26,17 @@ module.exports = function (app) {
   });
 
   //loads weddingDress.html page
-  app.get("/unsplash-dress-images", function (req, res) {
+  app.get("/dress-images", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/weddingDress.html"));
   });
 
   //loads cakes.html page
-  app.get("/unsplash-dress-images", function (req, res) {
+  app.get("/cakes-images", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/cakes.html"));
   });
 
   //loads tuxedo.html page
-  app.get("/unsplash-dress-images", function (req, res) {
+  app.get("/tuxedo-images", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/tuxedo.html"));
   });
 
