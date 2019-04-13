@@ -27,5 +27,6 @@ $("#logoutLink").on("click", function () {
         // Sign-out successful.
     }).catch(function (error) {
         // An error happened.
+        console.log(error);
     });
 });
