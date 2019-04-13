@@ -11,14 +11,13 @@
     "password": null,
     "database": "dreamboard_db",
     "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
+    "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "dreamboard_db",
-    "use_env_variable": "JAWSDB_URL",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
