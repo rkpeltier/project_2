@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- script for Firebase -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Reset Sheet -->
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <!--Popper-->
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="styles/homepage.css">
+    <!-- google fonts
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- title image icon -->
+    <link rel="shortcut icon" href="images/favicon1.png" type="images/png">
+
+
+    <title>Wedding Dreamboard</title>
+</head>
+
+<body>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+    <!-- <div id="titleBlock">
+
+       
+        <h1 id="title">Wedding Dreamboard</h1>
+
+
+    </div> -->
+    <div class="jumbotron jumbotron-fluid m-0" id="Flag">
+        <div class="container">
+            <h1 class="display-4">Wedding Dream Board</h1>
+            <p class="lead">Dream. Plan. Celebrate!
+            </p>
+            <a href="" id="logoutLink">Logout</a>
+        </div>
+    </div>
+
+
+    <!-- Navbar -->
+
+    <div class="container">
+
+        <div id="weddingDress" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <div style="height: 428px" class="card-img-overlay">
+                    <div style="height: 428px" class="overlay"><p>Wedding Dresses</p></div>
+                </div>
+                <img style="height: 428px" src="styles/images/weddingDress.jpg" class="card-img-top"  alt="Wedding Dresses">
+                <div class="card-body">
+                    <p class="card-text" id="weddingDresses">Wedding Dresses</p>
+                    <button class="btn favbtn" data-type="wedding-dress" data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="wedding-dress" data-toggle="tooltip" data-placement="bottom" title="Locations"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-dress"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="groomstuxedo" class="allContainers">
+            <div class="card" style="width: 18rem">
+                <div style="height: 428px" class="card-img-overlay">
+                    <div style="height: 428px" class="overlay"><p>Tuxedo</p></div>
+                </div>
+                <img style="height: 428px" src="styles/images/groomsSuit.jpg" class="card-img-top"  alt="Tuxedo">
+                <div class="card-body">
+                    <p class="card-text">Tuxedo</p>
+                    <button class="btn favbtn" data-type="tuxedo"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+
+                    <button class="btn mapBtn" data-type="tuxedo"data-toggle="tooltip" data-placement="bottom" title="Locations"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="tuxedo"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="cakes" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <div style="height: 428px" class="card-img-overlay">
+                <div style="height: 428px" class="overlay"><p>Cakes</p></div>
+            </div>
+            <img style="height: 428px" src="styles/images/cakes.jpg" class="card-img-top" alt="Cakes">
+                <div class="card-body">
+                    <p class="card-text">Cakes</p>
+                    <button class="btn favbtn" data-type="wedding-cake"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="weddind-cake"data-toggle="tooltip" data-placement="bottom" title="Locations"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-cake"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+
+        <div id="venues" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <div style="height: 428px" class="card-img-overlay">
+                    <div style="height: 428px" class="overlay"><p>Venues</p></div>
+                </div>
+                <img style="height: 428px" src="styles/images/venues1.jpg" class="card-img-top" alt="Venues">
+                <div class="card-body">
+                    <p class="card-text">Venues</p>
+                    <button class="btn favbtn" data-type="venues"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="venues"data-toggle="tooltip" data-placement="bottom" title="Locations"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="venues"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="weddingBouquet" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <div style="height: 428px" class="card-img-overlay">
+                    <div style="height: 428px" class="overlay"><p>Wedding Bouquet</p></div>
+                </div>
+                <img style="height: 428px" src="styles/images/bouquet1.jpg" class="card-img-top" alt="Wedding Bouquet">
+                <div class="card-body">
+                    <p class="card-text">Wedding Bouquet</p>
+                    <button class="btn favbtn" data-type="wedding-bouquet"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="wedding-bouquet"data-toggle="tooltip" data-placement="bottom" title="Locations"><i
+                            class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-bouquet"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="bridesMaidDress" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <div style="height: 428px" class="card-img-overlay">
+                    <div style="height: 428px" class="overlay"><p>Bridesmaid Dresses</p></div>
+                </div>
+                <img style="height: 428px" src="styles/images/bridesmaid.jpg" class="card-img-top" alt="Bridesmaid Dresses">
+                <div class="card-body">
+                    <p class="card-text">Bridesmaid Dresses</p>
+                    <button class="btn favbtn" data-type="bridesmaid-dress"data-toggle="tooltip" data-placement="left" title="Favorites"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="bridesmaid-dress"data-toggle="tooltip" data-placement="bottom" title="Locations"><i
+                            class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="bridesmaid-dress"data-toggle="tooltip" data-placement="right" title="Inspirations"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="search-save assets/scripts/images.js"></script>
+    <script src="assets/vendors.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
+</body>
+
+</html>
