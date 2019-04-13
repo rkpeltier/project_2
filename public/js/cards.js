@@ -14,8 +14,6 @@ $(".favbtn").on("click", function(){
 
 });
 
-favbtn
-
 $(".tuxBtn").on("click", function(){
     window.location.href = "tuxedo-images";
 });
