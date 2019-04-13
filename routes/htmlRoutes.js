@@ -13,7 +13,7 @@ module.exports = function (app) {
   //     });
   //   });
   // });
-
+ 
   //Loads Index.html
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
