@@ -65,7 +65,7 @@ $(document).ready(function () {
           $(location).attr('href', url);
   
         })
-  
+   
         .catch(function (error) {
           console.log(error);
           // Handle Errors here.
