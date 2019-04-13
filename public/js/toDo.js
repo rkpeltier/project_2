@@ -19,62 +19,34 @@ data = data || {};
         "2": "#inProgress",
         "3": "#completed"
     }
+    todo.init = function (options) {
 
-        todo.init = function (options) {
+        options = options || {};
+        options = $.extend({}, defaults, options);
 
-            options = options || {};
-            options = $.extend({}, defaults, options);
+        $.each(data, function (index, params) {
+            generateElement(params);
+        });
 
-            $.each(data, function (index, params) {
-                generateElement(params);
-            });
+        /*generateElement({
+            id: "123",
+            code: "1",
+            title: "asd",
+            date: "22/12/2013",
+            description: "Blah Blah"
+        });*/
 
-            /*generateElement({
-                id: "123",
-                code: "1",
-                title: "asd",
-                date: "22/12/2013",
-                description: "Blah Blah"
-            });*/
+        /*removeElement({
+            id: "123",
+            code: "1",
+            title: "asd",
+            date: "22/12/2013",
+            description: "Blah Blah"
+        });*/
 
-            /*removeElement({
-                id: "123",
-                code: "1",
-                title: "asd",
-                date: "22/12/2013",
-                description: "Blah Blah"
-            });*/
-
-            // Adding drop function to each category of task
-            $.each(codes, function (index, value) {
-                $(value).droppable({
-                    drop: function (event, ui) {
-                        var element = ui.helper,
-                            css_id = element.attr("id"),
-                            id = css_id.replace(options.taskId, ""),
-                            object = data[id];
-
-                        // Removing old element
-                        removeElement(object);
-
-                        // Changing object code
-                        object.code = index;
-
-                        // Generating new element
-                        generateElement(object);
-
-                        // Updating Local Storage
-                        data[id] = object;
-                        localStorage.setItem("todoData", JSON.stringify(data));
-
-                        // Hiding Delete Area
-                        $("#" + defaults.deleteDiv).hide();
-                    }
-                });
-            });
-
-            // Adding drop function to delete div
-            $("#" + options.deleteDiv).droppable({
+        // Adding drop function to each category of task
+        $.each(codes, function (index, value) {
+            $(value).droppable({
                 drop: function (event, ui) {
                     var element = ui.helper,
                         css_id = element.attr("id"),
@@ -84,18 +56,45 @@ data = data || {};
                     // Removing old element
                     removeElement(object);
 
-                    // Updating local storage
-                    delete data[id];
+                    // Changing object code
+                    object.code = index;
+
+                    // Generating new element
+                    generateElement(object);
+
+                    // Updating Local Storage
+                    data[id] = object;
                     localStorage.setItem("todoData", JSON.stringify(data));
 
                     // Hiding Delete Area
                     $("#" + defaults.deleteDiv).hide();
                 }
-            })
+            });
+        });
 
-        };
+        // Adding drop function to delete div
+        $("#" + options.deleteDiv).droppable({
+            drop: function (event, ui) {
+                var element = ui.helper,
+                    css_id = element.attr("id"),
+                    id = css_id.replace(options.taskId, ""),
+                    object = data[id];
 
-        // Add Task
+                // Removing old element
+                removeElement(object);
+
+                // Updating local storage
+                delete data[id];
+                localStorage.setItem("todoData", JSON.stringify(data));
+
+                // Hiding Delete Area
+                $("#" + defaults.deleteDiv).hide();
+            }
+        })
+
+    };
+
+    // Add Task
     var generateElement = function (params) {
         var parent = $(codes[params.code]);
         var wrapper;

@@ -1,6 +1,11 @@
 body
 {
   background-image: url("../images/favsBackground.jpg");
+  /* background: url(images/bg.jpg) no-repeat center center fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 h2
@@ -106,7 +111,7 @@ h1, h3 {
     font-size: 1.5em;
 }
   .event-details {
-  background-color: #ccc;
+  background-color: #ffd194;
   width: 100%;
   min-height: 200px;
   display: flex;
@@ -231,7 +236,6 @@ h1, h3 {
   min-height: 100%;
   background-color: transparent;
   border: 0;
-    
 }
 
 #header{
@@ -245,11 +249,16 @@ h1, h3 {
   width: 250px;
   float: left;
   margin: 0 5px;
-  background-color: rgb(240, 234, 150);
+  background-color: #ffd194;
   min-height: 240px;
   border-radius: 10px;
   padding-bottom: 15px;
   margin-top: 50px;
+
+}
+
+#task-body{
+  margin-left: 255px;
 }
 
 .task-list input, .task-list textarea{
@@ -290,7 +299,7 @@ h1, h3 {
 
 .task-heading{
   text-align: center;
-  background: rgb(250, 219, 44);
+  background:#fff;
 }
 #delete-div{
     display: none;
@@ -302,12 +311,50 @@ h1, h3 {
     text-align: center;
 }
 
+/* Favorite Buttons */
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25));
+	background:-moz-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+	background:-webkit-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+	background:-o-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+	background:-ms-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25',GradientType=0);
+	background-color:#ffc477;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size:22px;
+	font-weight:bold;
+	font-style:italic;
+	padding:8px 12px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477));
+	background:-moz-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-webkit-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-o-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-ms-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477',GradientType=0);
+	background-color:#fb9e25;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
 
 
 
 /* Styling it all now! */
 
-@font-face {
+/* @font-face {
 	font-family: 'digi';
 	src: url('http://cssdeck.com/uploads/resources/fonts/digii/DS-DIGII.TTF');
 }
@@ -329,5 +376,5 @@ body {
 		white,
 		#B9B7B1
 	);
-}
+} */
 
