@@ -33,4 +33,8 @@ body {
     color: white;
 }
 
+#welcomeHeader {
+    background:white;
+    position: relative;
+}
 
