@@ -16,7 +16,7 @@ $(document).ready(function () {
   
         .then(function (user) {
   
-          var url = "../public/homepage.html";
+          var url = "homepage.html";
           $(location).attr('href', url);
           console.log(user);
   
