@@ -13,7 +13,7 @@ $(document).ready(function () {
       var password = $("#passwordSignIn").val();
    
       firebase.auth().signInWithEmailAndPassword(email, password)
-  
+   
         .then(function (user) {
   
           var url = "homepage.html";
